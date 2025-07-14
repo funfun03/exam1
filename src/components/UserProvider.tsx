@@ -24,11 +24,7 @@ export const useUserContext = () => {
   return context;
 };
 
-interface UserProviderProps {
-  children: ReactNode;
-}
-
-export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
+export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [users, setUsers] = useState<User[]>([]);
 
   const addUser = (userData: User) => {
