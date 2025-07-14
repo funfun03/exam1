@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useUserContext } from "./UserProvider";
 
 const UserList = () => {
@@ -45,6 +46,12 @@ const UserList = () => {
                 </td>
                 <td className="border border-gray-300 px-4 py-2">
                   {user.age ? user.age : "N/A"}
+                  <Link
+                    to={`/users/${user.name}`}
+                    className="text-blue-500 hover:underline"
+                  >
+                    View Detail
+                  </Link>
                 </td>
               </tr>
             ))}
