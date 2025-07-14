@@ -1,4 +1,3 @@
-import React from "react";
 import { HiOutlineHome } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 

@@ -32,7 +32,7 @@ const UserForm = () => {
   const onSubmit = (data: any) => {
     console.log(data);
     addUser(data);
-    reset(); // Reset form after successful submission
+    reset();
     alert("User added successfully!");
   };
 

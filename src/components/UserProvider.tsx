@@ -1,4 +1,4 @@
-import React, { createContext, useContext, type ReactNode } from "react";
+import { createContext, useContext, type ReactNode } from "react";
 
 import { useState } from "react";
 
@@ -28,8 +28,10 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [users, setUsers] = useState<User[]>([]);
 
   const addUser = (userData: User) => {
+    const { id, ...restUserData } = userData;
     const newUser: User = {
-      ...userData,
+      id: new Date().toISOString(),
+      ...restUserData,
     };
     setUsers((prev) => [...prev, newUser]);
   };

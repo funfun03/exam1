@@ -33,11 +33,14 @@ const UserList = () => {
               <th className="border border-gray-300 px-4 py-2 text-left">
                 Age
               </th>
+              <th className="border border-gray-300 px-4 py-2 text-left">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
-              <tr key={index} className="hover:bg-gray-50">
+            {users.map((user) => (
+              <tr key={user.id} className="hover:bg-gray-50">
                 <td className="border border-gray-300 px-4 py-2">
                   {user.name}
                 </td>
@@ -46,9 +49,11 @@ const UserList = () => {
                 </td>
                 <td className="border border-gray-300 px-4 py-2">
                   {user.age ? user.age : "N/A"}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
                   <Link
-                    to={`/users/${user.name}`}
-                    className="text-blue-500 hover:underline"
+                    to={`/users/${user.id}`}
+                    className="text-blue-500 hover:underline font-medium"
                   >
                     View Detail
                   </Link>
